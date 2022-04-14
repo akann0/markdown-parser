@@ -6,4 +6,4 @@ an open parenthesis looks like this: (
 
 [a secret](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-[goggle](https://www.google.com/)
+[goggles](https://www.google.com/)
