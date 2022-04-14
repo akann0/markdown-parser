@@ -16,15 +16,25 @@ public class MarkdownParse {
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
+            // if any of []() do not exist, end loop
             if (openBracket == -1 || closeBracket == -1 || 
             openParen == -1 || closeParen == -1){
                 currentIndex = markdown.length();
+                break;
             }
+            
+            else if(markdown.indexOf("!", openBracket - 1) == openBracket - 1){
+                // if said link is an image, don't count it
+                currentIndex = closeParen + 1;
+        
+            }
+            // only count if []() is all on the same line
             else if (markdown.indexOf("\n", openBracket) == -1 ||
             markdown.indexOf("\n", openBracket) >= closeParen) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
-            } else { currentIndex = markdown.indexOf("\n", openBracket);}
+            }
+            else{ currentIndex = markdown.indexOf("\n", openBracket);}
             //System.out.println(currentIndex);
         }
 
