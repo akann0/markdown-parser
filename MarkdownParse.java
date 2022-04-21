@@ -23,7 +23,8 @@ public class MarkdownParse {
                 break;
             }
             
-            else if(markdown.indexOf("!", openBracket - 1) == openBracket - 1){
+            else if(markdown.indexOf("!", openBracket - 1) == openBracket - 1 
+            && openBracket > 0){
                 // if said link is an image, don't count it
                 currentIndex = closeParen + 1;
         
@@ -46,6 +47,7 @@ public class MarkdownParse {
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
+        System.out.println("The links are: ");
 	    System.out.println(links);
     }
 }
