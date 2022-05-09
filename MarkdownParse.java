@@ -22,9 +22,8 @@ public class MarkdownParse {
                 currentIndex = markdown.length();
                 break;
             }
-            
-            else if(markdown.indexOf("!", openBracket - 1) == openBracket - 1 
-            && openBracket > 0){
+            else if(markdown.indexOf("!", openBracket - 1) == openBracket - 1
+            && openBracket != 0){
                 // if said link is an image, don't count it
                 currentIndex = closeParen + 1;
         
@@ -49,5 +48,6 @@ public class MarkdownParse {
         ArrayList<String> links = getLinks(content);
         System.out.println("The links are: ");
 	    System.out.println(links);
+        System.out.prinln("an edit has been made...");
     }
 }
