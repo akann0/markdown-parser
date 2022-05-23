@@ -48,6 +48,6 @@ public class MarkdownParse {
         ArrayList<String> links = getLinks(content);
         System.out.println("The links are: ");
 	    System.out.println(links);
-        System.out.println("an edit has been made...");
+        System.out.prinln("an edit has been made...");
     }
 }

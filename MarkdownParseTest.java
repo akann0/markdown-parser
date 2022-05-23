@@ -58,4 +58,28 @@ public class MarkdownParseTest { //creates the class
         assertEquals(List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.google.com/"), links);
     }
 
+    @Test
+    public void tutorial6() throws IOException{
+        Path fileName = Path.of("Week8Test1.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), links);
+    }
+
+    @Test
+    public void tutorial7() throws IOException{
+        Path fileName = Path.of("Week8Test2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("a.com","a.com(())","example.com"), links);
+    }
+
+    @Test
+    public void tutorial8() throws IOException{
+        Path fileName = Path.of("Week8Test3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of(
+        "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"), links);
+    }
 }

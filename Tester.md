@@ -8,7 +8,7 @@ an open parenthesis looks like this: (
 
 This is what an exclamation mark looks like: !
 
-[goggles](https://www.google.com/)
+[google](https://www.google.com/)
 
 This is what an exclamation mark looks like: !
 
